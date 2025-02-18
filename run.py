@@ -9,7 +9,7 @@ Theta2 = np.loadtxt('Theta2.txt')
 
 def run(threshold = 100, loss_rate = 22, num = 0):
     try:
-        path = os.path.join("/tmp/", fr"tmp\({sys.argv[1]}).jpg")
+        path = os.path.join("/tmp/", fr"({sys.argv[1]}).jpg")
         image = cv2.resize(cv2.bitwise_not(cv2.imread(path, cv2.IMREAD_GRAYSCALE)), (28,28))
     except:
         print("Cannot find uploads")
