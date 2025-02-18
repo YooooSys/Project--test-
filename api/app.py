@@ -4,7 +4,7 @@ import os
 app = Flask(__name__)
 
 # Ensure the uploads directory exists
-UPLOAD_FOLDER = 'tmp'
+UPLOAD_FOLDER = '/tmp/'
     
 @app.route('/')
 def index():
