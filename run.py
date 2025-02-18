@@ -15,7 +15,6 @@ def run(threshold = 100, loss_rate = 22, num = 0):
         print("Cannot find uploads")
         return
     
-    print("fundamen")
     image = np.where(image > threshold, 255, 0)
 
     x = np.asarray(image)
