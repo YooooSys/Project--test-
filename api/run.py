@@ -40,27 +40,4 @@ def run(threshold = 100, loss_rate = 22, path = fr"uploads\({sys.argv[1]}).jpg" 
     # else:
     print(str(pred[0]))
 
-
-def Test_Accuracy():
-    test_cases = 1000
-    loss_rate_range = 11
-
-    for num, spl in num_set.items():
-        print(num, "=========")
-
-        for loss_rate in range(10, loss_rate_range):
-            total = 0
-
-            for i in range(1,test_cases + 1):
-                path = fr"C:\Users\apk11\OneDrive\Desktop\archive\{num}\{spl}_full ({i}).jpg"
-
-                try:
-                    total += 1 if run(loss_rate=loss_rate, path=path, num=num) else 0
-                except:
-                    continue
-
-            accuracy = total / test_cases * 100
-
-            print(loss_rate, accuracy,"%")
-
 run()

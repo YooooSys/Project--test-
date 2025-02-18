@@ -29,6 +29,24 @@ def run_python():
 
     return Response(generate(), mimetype='text/event-stream')
 
+@app.route('/upload-image', methods=['POST'])
+def upload_image():
+    if 'file' not in request.files:
+        return jsonify({'message': 'No file part'}), 400
+
+    file = request.files['file']
+
+    if file.filename == '':
+        return jsonify({'message': 'No selected file'}), 400
+
+    if file:
+        # Get the client's IP address
+        user_ip = request.remote_addr
+
+        # Save the file to the user's directory
+        file_path = os.path.join(UPLOAD_FOLDER, f"({user_ip}).jpg")
+        file.save(file_path)
+        return jsonify({'message': f'File uploaded successfully'}), 200
     
 if __name__ == '__main__':
     app.run(debug=True)
