@@ -1,5 +1,6 @@
 from flask import Flask, Response, render_template, request, jsonify
 import subprocess
+import os
 app = Flask(__name__)
 
 # Ensure the uploads directory exists
