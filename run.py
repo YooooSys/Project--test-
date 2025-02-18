@@ -6,9 +6,11 @@ import sys
 Theta1 = np.loadtxt('Theta1.txt')
 Theta2 = np.loadtxt('Theta2.txt')
 
-num_set = {0: "Zero", 1:"One", 2:"Two", 3:"Three", 4:"Four", 5:"Five", 6:"Six", 7:"Seven", 8:"Eight", 9:"Nine"}
-
-def run(threshold = 100, loss_rate = 22, path = fr"uploads\({sys.argv[1]}).jpg" if len(sys.argv) > 1 else print("Cannot find uploads"), num = 0):
+def run(threshold = 100, loss_rate = 22, num = 0):
+    if len(sys.argv) > 1:
+        path = fr"uploads\({sys.argv[1]}).jpg"
+    else:
+        print("Cannot find uploads")
     try:
         image = cv2.resize(cv2.bitwise_not(cv2.imread(path, cv2.IMREAD_GRAYSCALE)), (28,28))
     except :
