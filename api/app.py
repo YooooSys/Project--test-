@@ -1,12 +1,9 @@
 from flask import Flask, Response, render_template, request, jsonify
 import subprocess
-import os
 app = Flask(__name__)
 
 # Ensure the uploads directory exists
 UPLOAD_FOLDER = 'uploads'
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
     
 @app.route('/')
 def index():
