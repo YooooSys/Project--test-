@@ -7,7 +7,7 @@ import sys
 Theta1 = np.loadtxt('Theta1.txt')
 Theta2 = np.loadtxt('Theta2.txt')
 
-def run(threshold = 100, loss_rate = 22, num = 0):
+def run(threshold = 100, loss_rate = 22):
     try:
         path = os.path.join("/tmp/", fr"({sys.argv[1]}).jpg")
         image = cv2.resize(cv2.bitwise_not(cv2.imread(path, cv2.IMREAD_GRAYSCALE)), (28,28))
